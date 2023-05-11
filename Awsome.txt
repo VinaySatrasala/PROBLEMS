@@ -1,3 +1,4 @@
 1. find the middle element(1991) and pivot index(724)[same]
 2. 1887 not done ny u
 3. TODO :1823
+4. 1375

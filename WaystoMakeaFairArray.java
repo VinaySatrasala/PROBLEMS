@@ -3,4 +3,6 @@ public class WaystoMakeaFairArray {
         System.out.println(!true);
     }
 
+    // stativ 
+
 }
