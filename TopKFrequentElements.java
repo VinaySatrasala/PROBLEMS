@@ -1,26 +1,40 @@
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 public class TopKFrequentElements {
     public static void main(String[] args) {
-        topKFrequent(new int[]{1,1,1,2,2,3,3}, 2);
+        // topKFrequent(, 2);
+        System.out.println(Arrays.toString(topKFrequent(new int[]{1,1,1,2,2,3,2,3}, 2)));
     }
     static int[] topKFrequent(int[] nums, int k) {
-        List<Integer> ans=new ArrayList<>();
-        Map<Integer,Integer> maps=new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            if(maps.containsKey(nums[i])){
-                int x=maps.get(nums[i]);
-                maps.replace(nums[i], ++x);
+        List<Integer> keys=new ArrayList<>();
+        List<Integer> values=new ArrayList<>();
+
+        for(int i:nums){
+            if(!keys.contains(i)){
+                keys.add(i);
+                values.add(1);
             }else{
-                maps.put(nums[i],1);
+                values.set(keys.indexOf((Integer)i), values.get(keys.indexOf((Integer)i))+1);
             }
-            
         }
         
-        int[] arr = ans.stream().mapToInt(i -> i).toArray();
-        return arr;
+        int[] ans=new int[k];
+        for(int i=0;i<ans.length;i++){
+            int max = 0;
+            int index=-1;
+            for(int j=0;j<values.size();j++){
+                if(max < (int)values.get(j)){
+                    max = (int)values.get(j);
+                    index = j;
+                }
+            }
+            if(index != -1){
+                ans[i] = keys.get(index);
+                values.set(index,0);
+            }
+        }
+        return ans;
     }
 }
