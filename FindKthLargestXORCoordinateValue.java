@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class FindKthLargestXORCoordinateValue {
@@ -6,25 +7,23 @@ public class FindKthLargestXORCoordinateValue {
         
     }
     public int kthLargestValue(int[][] matrix, int k) {
-        ArrayList<Integer> ans=new ArrayList<>();
-        for (int[] x : matrix) {
-            int a=x[0];
-            int b=x[1];
-            int c=a^b;
-            if(!ans.contains(a)){
-                ans.add(a);
+        int[] xors = new int[matrix.length*matrix[0].length];
+        
+        int p = 0;
+        for (int i = 0; i < xors.length; i++) {
+            int ans = 0;
+            for (int j = 0; j < matrix[i].length; j++) {
+                ans ^= matrix[i][j];
+                xors[p++] = matrix[i][j];
             }
-            if(!ans.contains(b)){
-                ans.add(b);
-            }
-            if(!ans.contains(c)){
-                ans.add(c);
-            }
+            
         }
-        
-        Collections.sort(ans);
-        
-        return ans.get(ans.size()-k);   
+
+
+        Arrays.sort(xors);
+
+
+        return xors[xors.length - k];
 
 
     }

@@ -8,7 +8,7 @@ public class PrintWordsVertically {
     public List<String> printVertically(String s) {
         List<String> ans=new ArrayList<>();
         String[] p=s.split(" ");
-        for()
+        // for()
         
         
         return ans;

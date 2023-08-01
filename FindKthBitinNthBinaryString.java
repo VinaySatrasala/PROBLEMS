@@ -3,7 +3,6 @@ public class FindKthBitinNthBinaryString {
         String s="01";
         // System.out.println(s.replace('0', '2').replace('1', '0').replace('2', '1'));
         System.out.println(s);
-        s.
     }
 
     static char f(String s,int suf,int n,int k){

@@ -7,7 +7,7 @@ public class MaximumNumberofVowelsinaSubstringofGivenLength {
         int j=0;
         
         while(i<s.length() && j<s.length()){
-            if(s.charAt(j))
+            // if(s.charAt(j))
         }
         
         return 0;   

@@ -43,7 +43,7 @@ public class AstroidCollision {
                     }
                 }
 
-                Math.log10(j)
+                // Math.log10(j)
 
                 if((a[j] < 0 && a[k] < 0 ) || (a[j] > 0 && a[k] > 0)){
                     k=j;
